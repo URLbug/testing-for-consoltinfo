@@ -17,6 +17,8 @@ $multiples = [
     5,
 ];
 
-echo "Ответ - " . natural_number(1000, $multiples);
+echo "Ответ: " . natural_number(1000, $multiples);
 
 ?>
+
+<a href="/">Назад</a>
