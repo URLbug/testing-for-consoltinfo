@@ -28,7 +28,7 @@ if(isset($_POST["username"], $_POST["email"], $_POST["message"]) && $_SERVER["RE
 <body>
     <div class="container mt-5">
         <h1 class="text-center mb-4">Форма обратной связи</h1>
-        <form action="index.php" method="post" enctype="multipart/form-data">
+        <form action="./index.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="username">Имя</label>
                 <input type="text" class="form-control" name="username" id="username" required>
@@ -52,6 +52,9 @@ if(isset($_POST["username"], $_POST["email"], $_POST["message"]) && $_SERVER["RE
             
             <input type="submit" class="btn btn-primary" value="Отправить" required>
         </form>
+        <br/>
+        
+        <a href="/">Назад</a>
     </div>
 </body>
 </html>
