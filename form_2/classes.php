@@ -2,41 +2,27 @@
 
 class CSV
 {
-    private const PATH_CSV = "./csv";
-    
-    private $path;
-
-    private function download_csv(): bool
-    {
-        $this->path = CSV::PATH_CSV . "/" . $_FILES["file"]['name'];
-            
-        return @copy($_FILES["file"]['tmp_name'], $this->path);
-    }
-    
     public function read_csv()
     {
-        if($this->download_csv())
+        if (($handle = fopen($_FILES["file"]['tmp_name'], "r")) !== false) 
         {
-            if (($handle = fopen($this->path, "r")) !== false) 
+            while (($data = fgetcsv($handle, 1000, "\n")) !== false) 
             {
-                while (($data = fgetcsv($handle, 1000, "\n")) !== false) 
+                foreach($data as $rows)
                 {
-                    foreach($data as $rows)
-                    {
-                        $row = "";
+                    $row = "";
 
-                        $rows = explode(",", $rows);
+                    $rows = explode(",", $rows);
 
-                        foreach($rows as $val) 
-                            $row .= "<td>" . $val . "</td> ";
+                    foreach($rows as $val) 
+                        $row .= "<td>" . $val . "</td> ";
 
-                        echo "<tr><td>" . $row . "</td><tr><br>\n";
-                    }
+                    echo "<tr><td>" . $row . "</td><tr><br>\n";
                 }
             }
-
-            fclose($handle);
         }
+
+        fclose($handle);
     }
 }
 
