@@ -23,9 +23,8 @@ class Submision
     {
         $path = Submision::PATH_DATA . "/" . $name_file;
         
-        if (file_exists($path)) {
+        if (file_exists($path)) 
             $text .= "\n" . file_get_contents($path);
-        }
 
         $file = fopen($path, 'w');
         
@@ -36,16 +35,12 @@ class Submision
     
     public function upload(): string
     {
-        $this->write_text($this->username, "username.txt");
-
         if(filter_var($this->email, FILTER_VALIDATE_EMAIL))
             $this->write_text($this->email, "email.txt");
         else
             return "Неверный Email!";
         
-        $this->write_text($this->messsage, "message.txt");
-        
-        if(isset($_POST["file"]))
+        if($_FILES["file"]["size"] > 0)
         {
             $path = Submision::PATH_IMG . "/" . $_FILES["file"]['name'];
             
@@ -54,6 +49,9 @@ class Submision
 
             $this->write_text($path, "image.txt");
         }
+
+        $this->write_text($this->username, "username.txt");
+        $this->write_text($this->messsage, "message.txt");
 
         return "Сообщение отправлено!";
     }
