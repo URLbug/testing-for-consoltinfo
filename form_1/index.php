@@ -21,6 +21,7 @@ if(isset($_POST["username"], $_POST["email"], $_POST["message"]) && $_SERVER["RE
 
 <!DOCTYPE html>
 <html>
+<head>
     <title>Форма обратной связи</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
