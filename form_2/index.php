@@ -15,6 +15,9 @@
             
             <input type="submit" class="btn btn-primary" value="Отправить" required>
         </form>
+        <br/>
+
+        <a href="/">Назад</a>
     </div>
 </body>
 </html>

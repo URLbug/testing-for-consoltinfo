@@ -17,7 +17,7 @@ class CSV
                     foreach($rows as $val) 
                         $row .= "<td>" . $val . "</td> ";
 
-                    echo "<tr><td>" . $row . "</td><tr><br>\n";
+                    echo "<tr><td>" . $row . "</td><tr>";
                 }
             }
         }
