@@ -58,7 +58,7 @@ class Submision
             
         }
 
-        if($this->username === " " || $this->messsage === " ")
+        if(isset($this->username) || isset($this->messsage))
             return "Вы не заполнили поля Имя или Сообщения";
 
         $this->write_text($this->username, "username.txt");
