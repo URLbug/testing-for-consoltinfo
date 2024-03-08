@@ -1,6 +1,7 @@
 ./data/img/12.jpg
 ./data/img/12.jpg
 ./data/img/12.jpg
+./data/img/12.jpg
 ./data/img/photo_2023-11-22_22-56-22.jpg
 ./data/img/photo_2023-11-22_22-56-22.jpg
 ./data/img/photo_2023-11-22_22-56-22.jpg

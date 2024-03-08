@@ -42,13 +42,24 @@ class Submision
         
         if($_FILES["file"]["size"] > 0)
         {
-            $path = Submision::PATH_IMG . "/" . $_FILES["file"]['name'];
+            if(str_contains($_FILES["file"]["name"], "png") || str_contains($_FILES["file"]["name"], "jpg"))
+            {
+                $path = Submision::PATH_IMG . "/" . $_FILES["file"]['name'];
             
-            if (!@copy($_FILES["file"]['tmp_name'], $path)) 
-                return "Не удалось отправить файл!";
+                if (!@copy($_FILES["file"]['tmp_name'], $path)) 
+                    return "Не удалось отправить файл!";
 
-            $this->write_text($path, "image.txt");
+                $this->write_text($path, "image.txt");
+            }
+            else
+            {
+                return "Не удалось отправить файл!";
+            }
+            
         }
+
+        if($this->username === " " || $this->messsage === " ")
+            return "Вы не заполнили поля Имя или Сообщения";
 
         $this->write_text($this->username, "username.txt");
         $this->write_text($this->messsage, "message.txt");
