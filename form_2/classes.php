@@ -6,9 +6,9 @@ class CSV
     {
         if(str_contains($_FILES["file"]["name"], "csv"))
         {
-            if (($handle = fopen($_FILES["file"]['tmp_name'], "r")) !== false) 
+            if(($handle = fopen($_FILES["file"]['tmp_name'], "r")) !== false) 
             {
-                while (($data = fgetcsv($handle, 1000, "\n")) !== false) 
+                while(($data = fgetcsv($handle, 1000, "\n")) !== false) 
                 {
                     foreach($data as $rows)
                     {
@@ -28,7 +28,7 @@ class CSV
         }
         else
         {
-            echo "Это не CSV файл! Загрузите CSV файл!";
+            echo "Не получилось загрузить файл!";
         }
     }
 }

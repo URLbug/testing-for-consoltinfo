@@ -12,7 +12,7 @@
                 <label for="file">Файл (.csv)</label>
                 <input type="file" class="form-control-file" name="file" id="file" accept=".csv" required>
             </div>
-            
+
             <input type="submit" class="btn btn-primary" value="Отправить" required>
         </form>
         <br/>
