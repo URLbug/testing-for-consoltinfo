@@ -1,13 +1,4 @@
-./data/img/12.jpg
-./data/img/12.jpg
-./data/img/12.jpg
-./data/img/12.jpg
-./data/img/photo_2023-11-22_22-56-22.jpg
-./data/img/photo_2023-11-22_22-56-22.jpg
-./data/img/photo_2023-11-22_22-56-22.jpg
-./data/img/photo_2023-11-22_22-56-22.jpg
-./data/img/photo_2023-11-22_22-56-22.jpg
-./data/img/photo_2023-11-22_22-56-22.jpg
-./data/img/photo_2023-11-22_22-56-22.jpg
-./data/img/photo_2023-11-22_22-56-22.jpg
-./data/img/photo_2023-11-22_22-56-22.jpg
+C:\php\module_1\form_1/data/img/12.jpg
+C:\php\module_1\form_1/data/img/12.jpg
+C:\php\module_1\form_1/data/img/12.jpg
+C:\php\module_1\form_1/data/img/12.jpg

@@ -2,8 +2,8 @@
 
 class Submision
 {
-    private const PATH_DATA = "./data";
-    private const PATH_IMG = "./data/img";
+    private const PATH_DATA = __DIR__  . "/data";
+    private const PATH_IMG = __DIR__ . "/data/img";
 
     private $username;
     private $email;
@@ -58,7 +58,10 @@ class Submision
             
         }
 
-        if(empty($this->username) || empty($this->messsage))
+        $username_ = preg_match_all('/[\S]+/', $this->username);
+        $message_ = preg_match_all('/[\S]+/', $this->messsage);
+
+        if(!$username_ || !$message_)
             return "Вы не заполнили поля Имя или Сообщения";
 
         $this->write_text($this->username, "username.txt");

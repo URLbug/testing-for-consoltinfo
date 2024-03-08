@@ -6,7 +6,7 @@ use \Submision as Submision;
 
 $data = "";
 
-if(isset($_POST["username"], $_POST["email"], $_POST["message"]) && $_SERVER["REQUEST_METHOD"] == "POST")
+if(isset($_POST["username"], $_POST["email"], $_POST["message"]))
 {
   $submission = new Submision(
     $_POST["username"],
