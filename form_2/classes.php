@@ -4,25 +4,32 @@ class CSV
 {
     public function read_csv()
     {
-        if (($handle = fopen($_FILES["file"]['tmp_name'], "r")) !== false) 
+        if(str_contains($_FILES["file"]["name"], "csv"))
         {
-            while (($data = fgetcsv($handle, 1000, "\n")) !== false) 
+            if (($handle = fopen($_FILES["file"]['tmp_name'], "r")) !== false) 
             {
-                foreach($data as $rows)
+                while (($data = fgetcsv($handle, 1000, "\n")) !== false) 
                 {
-                    $row = "";
+                    foreach($data as $rows)
+                    {
+                        $row = "";
 
-                    $rows = explode(",", $rows);
+                        $rows = explode(",", $rows);
 
-                    foreach($rows as $val) 
-                        $row .= "<td>" . $val . "</td> ";
+                        foreach($rows as $val) 
+                            $row .= "<td>" . $val . "</td> ";
 
-                    echo "<tr><td>" . $row . "</td><tr>";
+                        echo "<tr>" . $row . "<tr>";
+                    }
                 }
             }
-        }
 
-        fclose($handle);
+            fclose($handle);
+        }
+        else
+        {
+            echo "Это не CSV файл! Загрузите CSV файл!";
+        }
     }
 }
 
