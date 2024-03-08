@@ -4,7 +4,8 @@ function natural_number(int $number, array $multiples): int
 {
     $sum = 0;
     
-    foreach ($multiples as $mul) {
+    foreach($multiples as $mul) 
+    {
         for ($num = 0; $num < $number; $num++)
             $sum += ($num % $mul) === 0 ? $num : 0;
     }
@@ -20,5 +21,7 @@ $multiples = [
 echo "Ответ: " . natural_number(1000, $multiples);
 
 ?>
+
+<br/>
 
 <a href="/">Назад</a>
